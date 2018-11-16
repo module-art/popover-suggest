@@ -25,6 +25,7 @@
       placement: 'right',
       dataUrl: 'data.html',
       chainLength: 2,
+      rows: 8,
       separator : ',',
       addData : {}
     }, options );
@@ -34,7 +35,8 @@
         gi=0
         dataUrl = settings.dataUrl,
         separator = settings.separator,
-        addData = settings.addData;
+        addData = settings.addData,
+        rows = settings.rows;
 
     this.popover({
       placement: settings.placement,
@@ -100,7 +102,7 @@
       var list = data.split(separator),
           list_length = list.length,
           htmlist = document.createElement('div'),
-          lines=10,
+          lines=rows,
           i;
 
       for(i=0; i<list_length; i++){
