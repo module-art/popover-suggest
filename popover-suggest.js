@@ -145,11 +145,11 @@
 
     for(var i=0; i<each_len; i++){
       each_result[i].addEventListener('mouseover', function() {
-        this.style.color = 'black';
+        this.style.color = '#666';
       }, false);
 
       each_result[i].addEventListener('mouseout', function() {
-        this.style.color = '#666';
+        this.style.color = 'black';
       }, false);
 
       each_result[i].addEventListener('click', function(e) {
@@ -167,13 +167,13 @@
         each_len = each_result.length;
 
     for(var i=0; i<each_len; i++){
-      each_result[i].style.color='#666';
+      each_result[i].style.color='black';
     }
     if(code==40 && n<each_len){
-      each_result[n].style.color='black';
+      each_result[n].style.color='#666';
       return 'ok';
     }else if(code==38 && n>=0){
-      each_result[n].style.color='black';
+      each_result[n].style.color='#666';
       return 'ok';
     }else if(code==13 && n>=0 && n<each_len){
       selected.value = each_result[n].innerHTML;
