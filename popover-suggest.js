@@ -27,6 +27,7 @@
       chainLength: 2,
       rows: 8,
       separator : ',',
+      html : false,
       addData : {}
     }, options );
 
@@ -35,6 +36,7 @@
         gi=0
         dataUrl = settings.dataUrl,
         separator = settings.separator,
+        allowHtml = settings.html,
         addData = settings.addData,
         rows = settings.rows;
 
@@ -118,7 +120,11 @@
         }
         var newp = document.createElement('p');
         newp.className = 'result';
-        newp.appendChild(document.createTextNode(list[i]));
+        if(allowHtml && !list[i].match(/<\/?p>/)){
+          newp.innerHTML = list[i];
+        }else{
+          newp.appendChild(document.createTextNode(list[i]));
+        }
         newdiv.appendChild(newp);
         if(i%lines==0 && i>0){
             htmlist.appendChild(newdiv);
